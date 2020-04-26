@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const db = require('./db')
-const emailRouter = require('./routes/email-router')
+const listingRouter = require('./routes/listing-router')
 
 const app = express()
 const apiPort = 9001
@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.use('/api', emailRouter)
+app.use('/api', listingRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
